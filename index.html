@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор случайных пользователей</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class="col col-md-6 offset-md-3">
+            <div class="card ">
+                <div class="card-header bg-primary text-white">
+                    <p class="m-0 text-center">Окно результатов генерации</p>
+                </div>
+                <div class="card-body bg-light" >
+                    <div class="row">
+                        <div class="col">
+                            <h5  class="card-title text-center"> Фамилия: <span id="surnameOutput">Генерация фамилии</span></h5>
+                            <h6 class="text-center">Имя: <span id="firstNameOutput">Иван</span></h6>
+                            <h6 class="text-center" >Отчество: <span id="firstPatronymicOutput">Иванович</span></h6>
+                            <p>
+                             <h6 class="col col-md-5 ">Пол: <span  id="genderOutput">Генерация пола</span></h6>
+                            <h6 class="col col-md-4  "> Дата рождения: <span  id="birthMonthOutput"> Генерация месяца рождения</span></h6>
+                             <h6 class="col col-md-4 ">   <span  id="birthYearOutput">Генерация года рождения</span> </h6>
+                                
+                             <h6 class="col col-md-5 ">Место работы: <span  id="jobOutput"> Генерация места работы</span></h6>
+                             </p>
+                        </div>
+                    </div>
+                    <button class="btn btn-info col-md-4"  id="Install">Install</button>
+                    <button class="btn btn-secondary col-md-4 "  id="throw" >Сбросить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="personGenerator.js"></script>
+<script src="init.js"></script>
+</body>
+</html>

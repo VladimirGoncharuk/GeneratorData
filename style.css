@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(https://proprikol.ru/wp-content/uploads/2020/07/kartinki-zimnij-pejzazh-26.jpg)
+    bottom no-repeat;
+    background-size: cover;
+    height: 758px;
+    
+}
+
+.card-body{
+    border: 5px solid  indigo;
+
+}
+
+
+.card-header p{
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#firstNameOutput,#surnameOutput,#firstPatronymicOutput{
+    font-size:27px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.row span {
+    font-weight:  bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
