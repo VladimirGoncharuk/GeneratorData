@@ -54,22 +54,7 @@ const personGenerator = {
         }
     }`,
       
-    PatronymicJson: `{
-            "count": 11,
-            "list": {     
-                "id_1": "Иванович",
-                "id_2": "Даниилович",
-                "id_3": "Сергеевич",
-                "id_4": "Анатольевич",
-                "id_5": "Владимирович",
-                "id_6": "Михайлович",
-                "id_7": "Константинович",
-                "id_8": "Вячеславович",
-                "id_9": "Андреевич",
-                "id_10": "Егорович",
-                "id_11": "Александрович"
-            }
-        }`,
+   
         jobMALEJson: `{
             "count": 11,
             "list": {     
@@ -163,21 +148,37 @@ const personGenerator = {
    
        },
 
-    randomPatronymic: function() {   
-        if   (this.person.gender === 'Женщина'){
-            return `${this.randomValue(this.PatronymicJson).replace('ич','на')}`
-         }
-        return this.randomValue(this.PatronymicJson);  
+    randomPatronymic: function() {  
+        const Patronymic= this.randomValue(this.firstMALENameJson);
+      
+        if   (this.person.gender === 'Женщина'){ 
+            if(Patronymic.substr(-1, 1)==='й'){
+            return `${Patronymic.replace(/.$/,'евна')}`
+        } else if(Patronymic.substr(-1, 1)==='а'){
+            return `${Patronymic.replace(/.$/,'ична')}`
+        }
+        return `${Patronymic}овна`
+         }else if(Patronymic.substr(-1, 1)==='й'){
+            return `${Patronymic.replace(/.$/,'евич')}`
+        } else if(Patronymic.substr(-1, 1)==='а'){
+            return `${Patronymic.replace(/.$/,'ич')}`
+        }
+        return `${Patronymic}ович` 
    
        },
-       randomjob: function() {   
-        if   (this.person.gender === 'Женщина'){
+       randomjob: function() {  
+        const job = this.person.birthYear;
+        if ((2022 - parseInt(job)) < 18){
+            return " Не подлежит трудоустройству"
+        }else if   (this.person.gender === 'Женщина'){
+            
             return this.randomValue(this.jobFEMALEJson);  
    
-         }
-        return this.randomValue(this.jobMALEJson);  
+         } 
+            return this.randomValue(this.jobMALEJson);  
    
         },
+
         randomMonth: function() {   
           const Month = this.randomValue(this.birthMonthJson);
        
